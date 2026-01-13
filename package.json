@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://quandao21.github.io/personal-website",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
