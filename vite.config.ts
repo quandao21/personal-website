@@ -3,8 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  // Matches the repository name for GitHub Pages: https://quandao21.github.io/personal-website/
-  base: '/personal-website/', 
+  base: './', // Ensures assets are loaded correctly on GitHub Pages sub-paths
   server: {
     port: 3000,
   },
