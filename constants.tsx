@@ -212,17 +212,55 @@ export const CV_DATA: ProfileData = {
     {
       id: "proj-1",
       title: "Wearable AI-based Device for Wrist Pulse Diagnosis",
-      techStack: ["Raspberry Pi", "ADC", "ARIMA", "LSTM", "Python"],
+      techStack: ["Raspberry Pi", "ADC", "Time Series", "LSTM", "Python"],
       description: [
         "Designed and fabricated a device that measures wrist pulse signals according to Traditional Chinese Medicine.",
         "Pulse signals recorded by ADC (ADS1263) and preprocessed by Raspberry Pi (Wavelet transforms).",
         "Implemented ARIMA, LSTM, and Temporal Fusion Transformer models on self-collected datasets for forecasting.",
         "Performed LSTM-DNN model for measuring Blood Glucose Levels from forecasted data."
+      ],
+      memories: [
+        {
+          title: "1. Motivation",
+          date: "Project Origins",
+          description: "• **The Problem**: For thousand years, Traditional Chinese Medicine (TCM) pulse diagnosis has offered a non-invasive diagnostic method, but it is highly subjective and relies heavily on the practitioner's experience. Moreover, the pulse data, which is used in TCM, has not recorded yet, limiting the ability to make further medical analysis.\n\n• **Goal**: Develop a wearable device that can record the pulse wave from the wrist, based on the principles of traditional medicine. Moreover, the device is facilitated with modern technologies to convert the recorded signal into valuable information used to monitor human health.",
+          imageUrl: "https://i.postimg.cc/YCsG6wvW/Customer-(6).png"
+        },
+        {
+          title: "2. Key Contributions",
+          date: "Research Impact",
+          description: "• Designed and fabricated a compact wearable wristband utilizing piezoelectric technology to capture arterial pulse waves.\n\n• Built a complete pipeline from signal acquisition and analog conditioning to digital processing and mobile application display.\n\n• **Application for BGL Measurement**: Create a dataset consisting of pulse wave signals and Blood Glucose Level (BGL). Forecast future pulse signals to estimate future BGL.",
+          imageUrl: "https://i.postimg.cc/PqbHtWn8/Customer-(7).png"
+        },
+        {
+          title: "3A. Mechanical Design",
+          date: "Methodology",
+          description: "• **Sensor Selection**: Utilized a DT1-052K Piezoelectric (similar size to the human finger), chosen for its high sensitivity to the mechanical pressure changes of arterial pulsing.\n\n• **Mechanism**: A portable bracelet with an isolator element enabling indirect measurement without direct skin contact. Simulates various forces to replicate the TCM method.\n\n• **Fabrication**: Designed a 3D-printed PLA casing with a strap mechanism to maintain consistent sensor pressure on the radial artery.",
+          imageUrl: "https://i.postimg.cc/wjpHnfSY/Customer-(8).png"
+        },
+        {
+          title: "3B. Electrical Design",
+          date: "Methodology",
+          description: "• **Embedded System**: ADS1263 reads analog signals from the piezoelectric sensor, converted to digital and transmitted to a Raspberry Pi Zero via SPI protocol. Raspberry Pi removes unexpected elements in raw signals.\n\n• **Digital Signal Processing (DSP)**: Implemented Wavelet transform to remove high-frequency elements (power line interference) and customized baseline-wander removal algorithms to eliminate noise from motion artifacts.",
+          imageUrl: "https://i.postimg.cc/FHRGFNt8/Customer-(9).png"
+        },
+        {
+          title: "3C. Dataset and AI Models",
+          date: "Methodology",
+          description: "• **Dataset**: Constructed a diverse dataset from 8 healthy subjects over 4 days, utilizing a rigorous protocol of four daily sessions (pre/post-breakfast and lunch) to capture distinct hemodynamic variations.\n\n• **Forecasting Model**: Leveraging Temporal Fusion Transformer Model to predict 128 points of future pulse data. The results are better than ARIMA and LSTM.\n\n• **BGL Measurement**: Proposed the relation between pulse data and BGL. Leveraged a D1NAMO dataset to pre-train a hybrid LSTM-ANN model then trained using our own data.",
+          imageUrl: "https://i.postimg.cc/2j91RDwq/Customer-(10).png"
+        },
+        {
+          title: "4. Conclusion & Future Scope",
+          date: "Final Results",
+          description: "• **Result**: Successfully fabricated a device that can record pulse data at the human wrist. Forecasting AI model achieved better results than ARIMA/LSTM. BGL measurement model achieved acceptable results.\n\n• **Impact**: The project proved the feasibility of using low-cost piezoelectric sensors combined with Deep Learning to replicate pulse diagnosis tasks objectively.\n\n• **Future Scope**: The system lays the groundwork for personal telemedicine devices, with future focus on expanding datasets to include CVD patients and refining ergonomic mechanical design.",
+          // imageUrl: "https://i.postimg.cc/rsB0PpMs/IMG-9474.avif"
+        }
       ]
     },
     {
       id: "proj-2",
-      title: "Smart Bin using AI for solid waste classification",
+      title: "Smart Bin using AI for Solid Waste Classification",
       techStack: ["Jetson Nano", "STM32", "MobileNet_V2", "AWS S3/RDS", "IoT"],
       description: [
         "Created a system that automatically classifies garbage and sorts it according to Vietnam's regulations.",
